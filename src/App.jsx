@@ -19,12 +19,12 @@ const App = () => {
         const audio = new Audio('https://www.soundjay.com/button/beep-07.mp3');
         audio.play().catch(err => console.error("Failed to play sound", err));
     }
-    useEffect(() => {
-        document.addEventListener("click", handleClick);
-        return () => document.removeEventListener("click", handleClick);
-    }, [])
+    // useEffect(() => {
+    //     document.addEventListener("click", handleClick);
+    //     return () => document.removeEventListener("click", handleClick);
+    // }, [])
     return (
-        <div className={styles.body}>
+        <div className={styles.body} onClick={() => handleClick()}>
             {count}
         </div>
     )
